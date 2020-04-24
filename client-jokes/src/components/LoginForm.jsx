@@ -32,7 +32,7 @@ const LoginForm = () => {
   };
 
   const pushToRegistration = () => {
-    push("/register");
+    push("/register");  
   };
   return (
     <div>
