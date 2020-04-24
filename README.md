@@ -40,11 +40,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] What is the purpose of using _sessions_?
 
+        1.	Sessions are commonly used to allow the server to store information about the client. This information can then be used for a variety of purposes. Sessions are used in order to persist data across requests and, in terms of authentication, can be used to prevent the user from having to re-enter their credentials every time a new request is made to the server.
+
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
+
+        2.	Bcrypt is a javascript library that takes our text input for our passwords and hashes them in order to encrypt them before they are stored on the server. This library can also add salts to the hash both manually as well as automatically depending on how you configure it. Bcrypt will hash the password in multiple rounds, meaning that anyone with malicious intent trying to decipher stored passwords will need the hash, the algorithm used and how many rounds were used to generate the hash in order to decrypt the password.
 
 - [ ] What does bcrypt do to slow down attackers?
 
+        3.	Bcrypt uses multiple hashing rounds in order to slow down attackers. In addition, the library will incorporate salts in order to protect against rainbow table attacks. The number of hash rounds can also be increased so that it remains resistant to brute-force attacks even with ever increasing computation power.
+
 - [ ] What are the three parts of the JSON Web Token?
+
+        4.	A JSON Web Token is comprised of three parts. The first part is the header. The header contains two pieces of information, the algorithm used to generate the token and the type of token being used. The second part of the JWT is the payload. The payload usually contains at least the subject of the token, which is usually the user id. The payload also contains other information including but not limited to the username and the time/date when the token was generated as well as the time/date when the token will expire. The third portion of a JWT is the signature. The signature portion of the token is a string created by base-64 encoding the header and the payload together and then signing it with a secret. The secret is a string that is stored on the server. Together, these three components make up a JSON Web Token that can be used for user authentication in web applications.
 
 ## Minimum Viable Product
 
